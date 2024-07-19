@@ -1,10 +1,11 @@
 services:
   mysql:
     image: 'mysql:latest'
+    container_name: 'mysql-picpay'
     environment:
-      - 'MYSQL_DATABASE=mydatabase'
-      - 'MYSQL_PASSWORD=secret'
-      - 'MYSQL_ROOT_PASSWORD=verysecret'
-      - 'MYSQL_USER=myuser'
+      - 'MYSQL_DATABASE=picpaydb'
+      - 'MYSQL_PASSWORD=123'
+      - 'MYSQL_ROOT_PASSWORD=123'
+      - 'MYSQL_USER=admin'
     ports:
       - '3306'
