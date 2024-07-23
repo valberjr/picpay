@@ -51,7 +51,7 @@ public class Wallet {
     }
 
     public void debit(BigDecimal value) {
-        this.balance = this.balance.min(value);
+        this.balance = this.balance.subtract(value);
     }
 
     public void credit(BigDecimal value) {
