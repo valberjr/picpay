@@ -3,6 +3,7 @@ package com.example.picpay.controller;
 import com.example.picpay.dto.CreateWalletDto;
 import com.example.picpay.entity.Wallet;
 import com.example.picpay.service.WalletService;
+import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -18,7 +19,7 @@ public class WalletController {
     }
 
     @PostMapping("/wallets")
-    public ResponseEntity<Wallet> createWallet(@RequestBody CreateWalletDto dto) {
+    public ResponseEntity<Wallet> createWallet(@RequestBody @Valid CreateWalletDto dto) {
         return ResponseEntity.ok(walletService.createWallet(dto));
     }
 
