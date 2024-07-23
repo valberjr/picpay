@@ -1,6 +1,7 @@
 package com.example.picpay.service;
 
 import com.example.picpay.client.AuthorizationClient;
+import com.example.picpay.dto.TransferDto;
 import com.example.picpay.exception.PicPayException;
 import org.springframework.stereotype.Service;
 
@@ -13,7 +14,7 @@ public class AuthorizationService {
         this.authorizationClient = authorizationClient;
     }
 
-    public boolean isAuthorized() {
+    public boolean isAuthorized(TransferDto dto) {
         var response = authorizationClient.isAuthorized();
 
         if (response.getStatusCode().isError()) {
